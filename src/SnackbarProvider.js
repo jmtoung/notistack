@@ -32,7 +32,7 @@ class SnackbarProvider extends Component {
      * @param {string} message - text of the notification
      * @deprecated
      */
-    handlePresentSnackbar = (variant, message) => {
+    static handlePresentSnackbar = (variant, message) => {
         if (process.env.NODE_ENV !== 'production') {
             /* eslint-disable no-console */
             console.warn('DEPRECATED - notistack: method \'onPresentSnackbar\' has  been  deprecated and will be removed in future versions of notistack. Please use \'enqueueSnackbar\' method instead. see https://github.com/iamhosseindhv/notistack#withsnackbar for more info.');
@@ -54,7 +54,7 @@ class SnackbarProvider extends Component {
      * @param {string} options.variant - type of the snackbar. default value is 'default'.
      * can be: (default, success, error, warning, info)
      */
-    handleEnqueueSnackbar = (message, options) => {
+    static handleEnqueueSnackbar = (message, options) => {
         this.queue.push({
             message,
             ...options,
